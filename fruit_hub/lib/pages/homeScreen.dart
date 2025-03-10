@@ -1,5 +1,8 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/widgets/top_cards.dart';
+import 'package:fruit_hub/widgets/customTab.dart';
+import 'package:fruit_hub/widgets/topCards.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -21,7 +24,10 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Icon(Icons.menu_rounded),
-                Icon(Icons.shopping_basket_outlined),
+                Icon(
+                  Icons.shopping_bag_outlined,
+                  color: Colors.deepOrangeAccent,
+                ),
               ],
             ),
           ),
@@ -55,7 +61,6 @@ class HomeScreen extends StatelessWidget {
                         borderSide: BorderSide(color: Colors.grey[50]!),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      // contentPadding: EdgeInsets.symmetric(vertical: 21),
                       focusedBorder: OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.grey[50]!),
                         borderRadius: BorderRadius.circular(10),
@@ -90,11 +95,10 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          // SizedBox(height: 20),
           Padding(
             padding: const EdgeInsets.only(bottom: 60.0),
             child: SizedBox(
-              height: 260,
+              height: 220,
               child: Expanded(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -121,23 +125,11 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 40),
-          // BottomNavigationBar(
-          //   items: const <BottomNavigationBarItem>[
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.home),
-          //       label: 'Home',
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.business),
-          //       label: 'Business',
-          //     ),
-          //     BottomNavigationBarItem(
-          //       icon: Icon(Icons.school),
-          //       label: 'School',
-          //     ),
-          //   ],
-          // )
+          SizedBox(height: 10),
+          // custom tabbar
+          Expanded(
+            child: CustomTabBar(),
+          ),
         ],
       ),
     );

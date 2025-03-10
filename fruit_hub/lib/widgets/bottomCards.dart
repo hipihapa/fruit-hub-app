@@ -1,16 +1,21 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
+import 'package:fruit_hub/pages/addScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class FirstCards extends StatelessWidget {
+class SecondCards extends StatelessWidget {
   final String imagePath;
   final String label;
   final String price;
+  final Color backgroundC;
 
-  const FirstCards({
+  const SecondCards({
     super.key,
     required this.imagePath,
     required this.label,
     required this.price,
+    required this.backgroundC,
   });
 
   @override
@@ -23,7 +28,7 @@ class FirstCards extends StatelessWidget {
           width: 152,
           height: 183,
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: backgroundC,
             borderRadius: BorderRadius.circular(10),
             boxShadow: [
               BoxShadow(
@@ -75,11 +80,21 @@ class FirstCards extends StatelessWidget {
                     Container(
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
-                        color: Color.fromRGBO(249, 238, 226, 1),
+                        color: Color.fromRGBO(246, 220, 192, 1),
                       ),
-                      child: Icon(
-                        Icons.add,
-                        color: Color.fromRGBO(240, 134, 38, 1.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => AddToCart(),
+                            ),
+                          );
+                        },
+                        child: Icon(
+                          Icons.add,
+                          color: Color.fromRGBO(240, 134, 38, 1.0),
+                        ),
                       ),
                     )
                   ],

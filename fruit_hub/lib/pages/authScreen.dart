@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/pages/auth_screen.dart';
+import 'package:fruit_hub/pages/homeScreen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+class AuthScreen extends StatelessWidget {
+  const AuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,17 +23,29 @@ class WelcomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Get The Freshest Salad Combo",
+                "What is your first name?",
                 style: GoogleFonts.poppins(
                   fontSize: 17,
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              SizedBox(height: 10),
-              Text(
-                "We deliver the best and freshest fruit salad in town. Order for a combo today!!",
-                style: GoogleFonts.poppins(
-                  fontSize: 13,
+              SizedBox(height: 15),
+              TextField(
+                cursorColor: Colors.black38,
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.grey[100],
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey[50]!),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey[50]!),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  hintText: 'Tony',
                 ),
               ),
               SizedBox(height: 50),
@@ -41,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => AuthScreen()),
+                    MaterialPageRoute(builder: (context) => HomeScreen()),
                   );
                 },
                 style: ElevatedButton.styleFrom(
@@ -52,7 +64,7 @@ class WelcomeScreen extends StatelessWidget {
                   backgroundColor: Color.fromRGBO(255, 164, 81, 1.0),
                   foregroundColor: Colors.white,
                 ),
-                child: Text("Let's Continue"),
+                child: Text("Start Ordering"),
               )
             ],
           ),
@@ -60,11 +72,11 @@ class WelcomeScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 100.0),
-            child: Center(
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 100.0),
               child: Image.asset(
-                "images/w-img.png",
+                "images/auth-img.png",
                 width: 301,
                 height: 260,
               ),

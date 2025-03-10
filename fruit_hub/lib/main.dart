@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/pages/splash_screen.dart';
+import 'package:fruit_hub/pages/splashScreen.dart';
 
 void main() {
   runApp(const MyApp());
