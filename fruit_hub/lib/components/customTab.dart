@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/widgets/bottomCards.dart';
+import 'package:fruit_hub/components/bottomCards.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomTabBar extends StatelessWidget {

@@ -31,7 +31,7 @@ class AuthScreen extends StatelessWidget {
               ),
               SizedBox(height: 15),
               TextField(
-                cursorColor: Colors.black38,
+                cursorColor: Colors.black87,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.grey[100],
@@ -45,7 +45,10 @@ class AuthScreen extends StatelessWidget {
                     borderSide: BorderSide(color: Colors.grey[50]!),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  hintText: 'Tony',
+                  hintText: 'Tony?',
+                  hintStyle: TextStyle(
+                    color: Colors.grey.shade500,
+                  ),
                 ),
               ),
               SizedBox(height: 50),

@@ -1,8 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:fruit_hub/widgets/customTab.dart';
-import 'package:fruit_hub/widgets/topCards.dart';
+import 'package:fruit_hub/pages/authScreen.dart';
+import 'package:fruit_hub/components/customTab.dart';
+import 'package:fruit_hub/components/topCards.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -12,7 +13,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back),
+        leading: GestureDetector(
+          onTap: () {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AuthScreen(),
+              ),
+            );
+          },
+          child: Icon(Icons.arrow_back),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -66,6 +77,9 @@ class HomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       hintText: 'Search for fruit and salad combos',
+                      hintStyle: TextStyle(
+                        color: Colors.grey.shade500,
+                      ),
                     ),
                   ),
                 ),
